@@ -116,6 +116,7 @@ const resetButton = document.querySelector('.result button')
 
 let totalAmount
 
+
 // Give selected different color
 tipOptions.forEach((tipOption)=> {
     tipOption.setAttribute('onclick', 'activeGiver()')
@@ -130,20 +131,24 @@ activeGiver = () => {
     })
 }
 
+
+// change from button to input and applies numeric input function
 customButton.addEventListener('click', function() {
     customButton.setAttribute('style', 'display: none')
     customInput.setAttribute('style', 'display: inline')
     toHtmlNumericInput('custom-input')
 })
-    
+
+// apply numeric input
 bill.addEventListener('click', function() {
     toHtmlNumericInput('bill-amount')
 })
-
 people.addEventListener('click', function(){
     toHtmlNumericInput('people-amount')
 })
 
+
+// Calculate total tip amount
 calculateTip = (tipAmount) => {
     totalAmount = bill.value/100*tipAmount
     console.log(totalAmount)
@@ -153,26 +158,34 @@ calculateTip = (tipAmount) => {
     inputCheck()
 }
 
+// Calculate per person
 perPerson = () => {
     amount = totalAmount/people.value
     tipPerPerson.textContent = `$${amount}`
 }
 
+
+// Add function to buttons so the percentage option can be made
 buttons.forEach((button) => {
     button.addEventListener('click', function(){
         calculateTip(button.value)
     })
 })
 
+// Same but input
 customInput.addEventListener('focusout', function(){
     calculateTip(customInput.value)
 })
 
+
+// Calls perPerson() after amount of people is set
 people.addEventListener('focusout', function() {
     perPerson()
 })
 
-reset = () => { //this function need to work on load
+
+// Resets values
+reset = () => {
     bill.value = '0'
     people.value = '1'
     customInput.value = '0'
@@ -180,6 +193,8 @@ reset = () => { //this function need to work on load
     tipPerPerson.textContent = '$0.00'
 }
 
+
+// Checker to give reset button class and it's functions
 inputCheck = () => {
     if (totalTip.textContent !== '$0.00' && totalTip.textContent !== '$0') {
         resetButton.classList.add('resetActive')
@@ -191,6 +206,7 @@ inputCheck = () => {
         resetButton.removeEventListener('click')
     }
 }
+
 
 reset()
 inputCheck()
