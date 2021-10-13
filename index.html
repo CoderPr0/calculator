@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>SPLI<br>TTER</h1>
+
+        <div class="calc">
+            <div>
+                <h2>Bill</h2>
+                <label for="bill-amount"><img src="images/icon-dollar.svg" alt=""></label>
+                <input type="text" value="0" id="bill-amount">
+            </div>
+            
+            <div class="select-tip">
+                <h2>Select Tip %</h2>
+                <button class="buttons options" value="5">5%</button>
+                <button class="buttons options" value="10">10%</button>
+                <button class="buttons options" value="15">15%</button>
+                <button class="buttons options" value="25">25%</button>
+                <button class="buttons options" value="50">50%</button>
+                <button id="custom" class="custom options">Custom</button>
+                <input type="text" id="custom-input" class="custom-input">
+            </div>
+            
+            <div>
+                <h2>Number of People</h2>
+                <label for="people-amount"><img src="images/icon-person.svg" alt=""></label>
+                <input type="text" value="1" id="people-amount">
+            </div>
+        </div>
+            
+        <div class="result">
+            <div>
+                <div>
+                    <h2>Tip Amount</h2>
+                    <p class="per-person">/ person</p>
+                </div>
+                <p id="tip-amount" class="total">$0.00</p>
+            </div>
+                
+            <div>
+                <div>
+                    <h2>Total</h2>
+                    <p class="per-person">/ person</p>
+                </div>
+                <p id="total-tip" class="total">$0.00</p>
+            </div>
+                
+            <button>Reset</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

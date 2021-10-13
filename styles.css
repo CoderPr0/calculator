@@ -1,0 +1,197 @@
+*, *::before, *::after {
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+    margin: 12% 20%;
+}
+
+
+/* -----main----- */
+main {
+    background-color: hsl(0, 0%, 100%);
+    position: relative;
+    display: flex;
+    border-radius: 1.5em;
+}
+
+main > h1 {
+    position: absolute;
+    top: -4em;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* ---Calc--- */
+.calc {
+    width: 48%;
+    padding: 2em;
+    margin: 2% 0 2% 2%;
+}
+
+.calc h2 {
+    font-size: 16px;
+    color: hsl(186, 14%, 43%);
+}
+
+.calc > div {
+    position: relative;
+}
+
+.calc label {
+    position: absolute;
+    bottom: 0.2em;
+    left: 0.5em;
+}
+
+.calc input {
+    font-weight: 700;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(184, 14%, 56%);
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0.5em;
+    padding-left: 80%;
+    cursor: pointer;
+}
+
+.select-tip {
+    margin: 1.6em 0;
+}
+
+.calc button {
+    cursor: pointer;
+    font-size: 18px;
+    background-color: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    width: 31%;
+    padding: 3% 6%;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.calc .active {
+    background-color: hsl(172, 67%, 45%);
+}
+
+.calc .custom {
+    font-weight: 700;
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(186, 14%, 43%);
+    padding: 3% 0.5%;
+}
+
+.calc .custom-input {
+    display: none;
+    background-color: hsl(189, 41%, 98.5%);
+    width: 31%;
+    height: 3.5em;
+    padding-left: 20%;
+    border: 2px solid hsla(183, 100%, 15%, 0.5);
+    border-radius: 0.8em;
+}
+
+/* ---result--- */
+.result {
+    background-color: hsl(183, 100%, 15%);
+    position: relative;
+    width: 48%;
+    padding: 2em;
+    border-radius: 1.5em;
+    margin: 2% 2% 2% 0;
+}
+
+.result > div {
+    display: flex;
+    margin-bottom: 3em
+}
+
+.result h2 {
+    font-size: 16px;
+    color: hsl(0, 0%, 100%);
+}
+
+.per-person {
+    font-size: 15px;
+    color: hsl(184, 14%, 56%);
+}
+
+.total {
+    font-size: 34px;
+    font-weight: 700;
+    color: hsl(172, 67%, 45%);
+    margin-left: auto;
+}
+
+.result button {
+    font-size: 18px;
+    font-weight: 700;
+    background-color: hsla(186, 14%, 43%, 0.94);
+    color: hsl(183, 100%, 15%);
+    position: absolute;
+    width: 82%;
+    height: 2.5em;
+    bottom: 2em;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 0.5em;
+}
+
+.result .resetActive {
+    background-color: hsl(172, 67%, 45%);
+    cursor: pointer;
+}
+
+.resetActive:hover {
+    background-color: hsl(172, 67%, 70%);
+}
+
+
+
+
+@media(max-width: 1200px) {
+    body {
+        margin-top: 20%;
+    }
+
+    /* -----main----- */
+    /* ---Calc--- */
+    .calc button {
+        font-size: 14px;
+        width: 30%;
+    }
+}
+
+@media (max-width: 920px) {
+    body {
+        margin: 30% 12% 10%;
+    }
+
+    /* -----main---- */
+    main {
+        flex-direction: column;
+    }
+    /* ---Calc--- */
+    .calc {
+        width: 98%;
+    }
+    .calc button {
+        font-size: 16px;
+        width: 48%;
+    }
+    /* ---result--- */
+    .result {
+        width: 90%;
+        margin: 1% 5% 4% 5%;
+    }
+    .result > div {
+        margin-bottom: 2.5em;
+    }
+    .result button {
+        bottom: 1em;
+    }
+}
